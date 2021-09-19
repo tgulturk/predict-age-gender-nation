@@ -7,10 +7,6 @@
   let gender;
   let nation;
 
-  const handleClick = (event) => {
-    makePredictions(name);
-  };
-
   const onKeyPress = (e) => {
     if (e.charCode === 13) makePredictions(name);
   };
