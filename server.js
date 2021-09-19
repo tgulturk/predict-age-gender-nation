@@ -1,12 +1,15 @@
 const express = require("express");
-const serveStatic = require("serve-static");
+const app = express();
 const path = require("path");
 
-const app = express();
+const port = process.env.PORT || 5000;
 
-app.use("/", serveStatic(path.join(__dirname, "/dist")));
+app.use(express.static("public"));
 
-const port = process.env.PORT || 8080;
-app.listen(port);
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
-console.log("Listening on port: " + port);
+app.listen(port, () =>
+  console.log(`Server is running on: http://localhost:${port}`)
+);
