@@ -35,10 +35,10 @@
 <main>
   <div class="container">
     <div class="row justify-content-md-center mt-5">
-      <h1>Predict Age, Nation, Gender</h1>
+      <h1 class="text-center">Predict Age, Nation, Gender</h1>
     </div>
     <div class="row justify-content-md-center mt-5">
-      <div class="col-lg-6 col-md-8 col-xs-12">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
         <div class="input-group input-group-lg ">
           <span class="input-group-text" id="inputGroup-sizing-lg"
             >Enter Name</span
@@ -46,20 +46,17 @@
           <input
             bind:value={name}
             type="text"
-            class="form-control"
+            class="form-control col-6"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-lg"
             on:keypress={onKeyPress}
           />
-          <button type="button" class="btn btn-primary" on:click={handleClick}
-            >Predict</button
-          >
         </div>
       </div>
     </div>
 
     {#if age && nation && nation}
-      <div class="row justify-content-md-center mt-5">
+      <div class="row justify-content-md-center mt-5 text-center">
         <div class="card" style="width: 36rem;">
           <div class="card-body">
             <h5 class="card-title text-capitalize">Name: {age.name}</h5>
@@ -96,16 +93,4 @@
 </main>
 
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
 </style>
